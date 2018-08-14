@@ -10,23 +10,23 @@ const styles = StyleSheet.create({
   }
 });
 
-Arrow.propTypes = {
-  vertexDeg: PropTypes.number,
-  start: PropTypes.shape({
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired
-  }).isRequired,
-  end: PropTypes.shape({
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired
-  }).isRequired,
-  width: PropTypes.number.isRequired,
-  color: PropTypes.string.isRequired
-};
-
 export default class Arrow extends Component {
   static defaultProps = {
     vertexDeg: 90
+  };
+
+  static propTypes = {
+    vertexDeg: PropTypes.number,
+    start: PropTypes.shape({
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired
+    }).isRequired,
+    end: PropTypes.shape({
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired
+    }).isRequired,
+    width: PropTypes.number.isRequired,
+    color: PropTypes.string.isRequired
   };
 
   // 构造

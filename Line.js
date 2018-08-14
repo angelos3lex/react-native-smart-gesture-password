@@ -9,19 +9,6 @@ const styles = StyleSheet.create({
   }
 });
 
-Line.propTypes = {
-  color: PropTypes.string.isRequired,
-  lineWidth: PropTypes.number,
-  start: PropTypes.shape({
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired
-  }).isRequired,
-  end: PropTypes.shape({
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired
-  }).isRequired
-};
-
 export default class Line extends Component {
   //static defaultProps = {
   //    lineWidth: 1,
@@ -33,6 +20,19 @@ export default class Line extends Component {
     // 初始状态
     this.state = {};
   }
+
+  static propTypes = {
+    color: PropTypes.string.isRequired,
+    lineWidth: PropTypes.number,
+    start: PropTypes.shape({
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired
+    }).isRequired,
+    end: PropTypes.shape({
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired
+    }).isRequired
+  };
 
   render() {
     let transform = Utils.getLineTransform(this.props.start, this.props.end);

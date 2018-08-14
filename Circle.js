@@ -7,23 +7,22 @@ const styles = StyleSheet.create({
   }
 });
 
-//const borderWidth = 1
-Circle.propTypes = {
-  isFill: PropTypes.bool,
-  color: PropTypes.string.isRequired,
-  radius: PropTypes.number.isRequired,
-  borderWidth: PropTypes.number.isRequired,
-  backgroundColor: PropTypes.string,
-  position: PropTypes.shape({
-    left: PropTypes.number.isRequired,
-    top: PropTypes.number.isRequired
-  }).isRequired
-};
-
 export default class Circle extends Component {
   static defaultProps = {
     isFill: false,
     backgroundColor: "transparent"
+  };
+
+  static propTypes = {
+    isFill: PropTypes.bool,
+    color: PropTypes.string.isRequired,
+    radius: PropTypes.number.isRequired,
+    borderWidth: PropTypes.number.isRequired,
+    backgroundColor: PropTypes.string,
+    position: PropTypes.shape({
+      left: PropTypes.number.isRequired,
+      top: PropTypes.number.isRequired
+    }).isRequired
   };
 
   // 构造

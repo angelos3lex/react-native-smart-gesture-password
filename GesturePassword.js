@@ -39,25 +39,6 @@ export default class GesturePassword extends Component {
     allowCross: true
   };
 
-  static propTypes = {
-    lineWidth: PropTypes.number,
-    pointBackgroundColor: PropTypes.string,
-    gestureAreaLength: PropTypes.number,
-    color: PropTypes.string,
-    lineColor: PropTypes.string,
-    activeColor: PropTypes.string,
-    warningColor: PropTypes.string,
-    warningDuration: PropTypes.number,
-    topComponent: PropTypes.element,
-    bottomComponent: PropTypes.element,
-    isWarning: PropTypes.bool,
-    showArrow: PropTypes.bool,
-    allowCross: PropTypes.bool,
-    onStart: PropTypes.func,
-    onReset: PropTypes.func,
-    onFinish: PropTypes.func
-  };
-  
   // 构造
   constructor(props) {
     super(props);
@@ -428,3 +409,22 @@ export default class GesturePassword extends Component {
     }
   };
 }
+
+GesturePassword.propTypes = {
+  lineWidth: PropTypes.number,
+  pointBackgroundColor: PropTypes.string,
+  gestureAreaLength: PropTypes.number,
+  color: PropTypes.string,
+  lineColor: PropTypes.string,
+  activeColor: PropTypes.string,
+  warningColor: PropTypes.string,
+  warningDuration: PropTypes.number,
+  topComponent: PropTypes.element,
+  bottomComponent: PropTypes.element,
+  isWarning: PropTypes.bool,
+  showArrow: PropTypes.bool,
+  allowCross: PropTypes.bool,
+  onStart: PropTypes.func,
+  onReset: PropTypes.func,
+  onFinish: PropTypes.func
+};

@@ -21,19 +21,6 @@ export default class Line extends Component {
     this.state = {};
   }
 
-  static propTypes = {
-    color: PropTypes.string.isRequired,
-    lineWidth: PropTypes.number,
-    start: PropTypes.shape({
-      x: PropTypes.number.isRequired,
-      y: PropTypes.number.isRequired
-    }).isRequired,
-    end: PropTypes.shape({
-      x: PropTypes.number.isRequired,
-      y: PropTypes.number.isRequired
-    }).isRequired
-  };
-
   render() {
     let transform = Utils.getLineTransform(this.props.start, this.props.end);
 
@@ -58,3 +45,16 @@ export default class Line extends Component {
     );
   }
 }
+
+Line.propTypes = {
+  color: PropTypes.string.isRequired,
+  lineWidth: PropTypes.number,
+  start: PropTypes.shape({
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired
+  }).isRequired,
+  end: PropTypes.shape({
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired
+  }).isRequired
+};

@@ -1,6 +1,6 @@
 {
   "name": "react-native-smart-gesture-password-angeloslex",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "A smart gesture password locker for react-native apps",
   "main": "GesturePassword.js",
   "scripts": {

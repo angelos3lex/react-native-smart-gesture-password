@@ -15,20 +15,6 @@ export default class Arrow extends Component {
     vertexDeg: 90
   };
 
-  static propTypes = {
-    vertexDeg: PropTypes.number,
-    start: PropTypes.shape({
-      x: PropTypes.number.isRequired,
-      y: PropTypes.number.isRequired
-    }).isRequired,
-    end: PropTypes.shape({
-      x: PropTypes.number.isRequired,
-      y: PropTypes.number.isRequired
-    }).isRequired,
-    width: PropTypes.number.isRequired,
-    color: PropTypes.string.isRequired
-  };
-
   // 构造
   constructor(props) {
     super(props);
@@ -68,3 +54,17 @@ export default class Arrow extends Component {
     );
   }
 }
+
+Arrow.propTypes = {
+  vertexDeg: PropTypes.number,
+  start: PropTypes.shape({
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired
+  }).isRequired,
+  end: PropTypes.shape({
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired
+  }).isRequired,
+  width: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired
+};

@@ -13,18 +13,6 @@ export default class Circle extends Component {
     backgroundColor: "transparent"
   };
 
-  static propTypes = {
-    isFill: PropTypes.bool,
-    color: PropTypes.string.isRequired,
-    radius: PropTypes.number.isRequired,
-    borderWidth: PropTypes.number.isRequired,
-    backgroundColor: PropTypes.string,
-    position: PropTypes.shape({
-      left: PropTypes.number.isRequired,
-      top: PropTypes.number.isRequired
-    }).isRequired
-  };
-
   // 构造
   constructor(props) {
     super(props);
@@ -66,3 +54,15 @@ export default class Circle extends Component {
     );
   }
 }
+
+Circle.propTypes = {
+  isFill: PropTypes.bool,
+  color: PropTypes.string.isRequired,
+  radius: PropTypes.number.isRequired,
+  borderWidth: PropTypes.number.isRequired,
+  backgroundColor: PropTypes.string,
+  position: PropTypes.shape({
+    left: PropTypes.number.isRequired,
+    top: PropTypes.number.isRequired
+  }).isRequired
+};

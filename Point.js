@@ -9,22 +9,6 @@ export default class Point extends Component {
     isActive: false,
     isWarning: false
   };
-  
-  static propTypes = {
-    index: PropTypes.number.isRequired,
-    radius: PropTypes.number.isRequired,
-    borderWidth: PropTypes.number.isRequired,
-    isActive: PropTypes.bool.isRequired,
-    isWarning: PropTypes.bool.isRequired,
-    backgroundColor: PropTypes.string,
-    color: PropTypes.string.isRequired,
-    activeColor: PropTypes.string.isRequired,
-    warningColor: PropTypes.string.isRequired,
-    position: PropTypes.shape({
-      left: PropTypes.number.isRequired,
-      top: PropTypes.number.isRequired
-    }).isRequired
-  };
 
   // 构造
   constructor(props) {
@@ -69,3 +53,19 @@ export default class Point extends Component {
     );
   }
 }
+
+Point.propTypes = {
+  index: PropTypes.number.isRequired,
+  radius: PropTypes.number.isRequired,
+  borderWidth: PropTypes.number.isRequired,
+  isActive: PropTypes.bool.isRequired,
+  isWarning: PropTypes.bool.isRequired,
+  backgroundColor: PropTypes.string,
+  color: PropTypes.string.isRequired,
+  activeColor: PropTypes.string.isRequired,
+  warningColor: PropTypes.string.isRequired,
+  position: PropTypes.shape({
+    left: PropTypes.number.isRequired,
+    top: PropTypes.number.isRequired
+  }).isRequired
+};

@@ -7,7 +7,7 @@
 
 import React, { Component } from "react";
 import { PanResponder, Dimensions, StyleSheet, View, Text } from "react-native";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import * as Utils from "./Utils";
 import Point from "./Point";
 import Line from "./Line";

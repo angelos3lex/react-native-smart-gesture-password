@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 const styles = StyleSheet.create({
   container: {
     position: "absolute"

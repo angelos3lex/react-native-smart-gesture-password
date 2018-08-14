@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
 
 import Circle from "./Circle";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 
 Point.propTypes = {
   index: PropTypes.number.isRequired,

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
 
 import * as Utils from "./Utils";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 const styles = StyleSheet.create({
   container: {
     position: "absolute"
@@ -10,17 +10,17 @@ const styles = StyleSheet.create({
 });
 
 Line.propTypes = {
-    color: PropTypes.string.isRequired,
-    lineWidth: PropTypes.number,
-    start: PropTypes.shape({
-        x: PropTypes.number.isRequired,
-        y: PropTypes.number.isRequired,
-    }).isRequired,
-    end: PropTypes.shape({
-        x: PropTypes.number.isRequired,
-        y: PropTypes.number.isRequired,
-    }).isRequired,
-}
+  color: PropTypes.string.isRequired,
+  lineWidth: PropTypes.number,
+  start: PropTypes.shape({
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired
+  }).isRequired,
+  end: PropTypes.shape({
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired
+  }).isRequired
+};
 
 export default class Line extends Component {
   //static defaultProps = {

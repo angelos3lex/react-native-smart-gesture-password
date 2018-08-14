@@ -1,5 +1,5 @@
 {
-  "name": "react-native-smart-gesture-password",
+  "name": "react-native-smart-gesture-password-angeloslex",
   "version": "2.1.0",
   "description": "A smart gesture password locker for react-native apps",
   "main": "GesturePassword.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/angelos3lex/react-native-smart-gesture-password.git"
+    "url": "git+https://github.com/angelos3lex/react-native-smart-gesture-password-angeloslex.git"
   },
   "keywords": [
     "react-native",
@@ -24,5 +24,5 @@
   "bugs": {
     "url": "https://github.com/react-native-component/react-native-smart-gesture-password/issues"
   },
-  "homepage": "https://github.com/angelos3lex/react-native-smart-gesture-password.git#readme"
+  "homepage": "https://github.com/angelos3lex/react-native-smart-gesture-password-angeloslex.git#readme"
 }

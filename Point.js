@@ -1,5 +1,4 @@
 import React, {
-    PropTypes,
     Component,
 } from 'react'
 import {
@@ -8,7 +7,7 @@ import {
 } from 'react-native'
 
 import Circle from './Circle'
-
+import {PropTypes} from "prop-types";
 export default class Point extends Component {
 
     static defaultProps = {

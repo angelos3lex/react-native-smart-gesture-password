@@ -1,5 +1,4 @@
 import React, {
-    PropTypes,
     Component,
 } from 'react'
 import {
@@ -8,7 +7,7 @@ import {
 } from 'react-native'
 
 import * as Utils from './Utils'
-
+import {PropTypes} from "prop-types";
 const styles = StyleSheet.create({
     container: {
         position: 'absolute',

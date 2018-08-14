@@ -6,7 +6,6 @@
  */
 
 import React, {
-    PropTypes,
     Component,
 } from 'react'
 import {
@@ -16,7 +15,7 @@ import {
     View,
     Text,
 } from 'react-native'
-
+import {PropTypes} from "prop-types";
 import * as Utils from './Utils'
 import Point from './Point'
 import Line from './Line'

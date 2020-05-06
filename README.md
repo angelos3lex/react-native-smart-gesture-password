@@ -179,6 +179,9 @@ export default class gesturePasswordDemo extends Component {
     }
 
 }
+
+// In case you want to render the password in a dialog, then you need to calculate the x and y of this dialog's outer view. So, on the view that contains this gesturePassword view (the dialogView), implement onLayout and set the event's y to marginTop prop and event's x to marginStart prop, so that the touches are correctly handled
+
 ```
 
 ## Props

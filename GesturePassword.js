@@ -6,7 +6,7 @@
  */
 
 import React, { Component } from "react";
-import { PanResponder, Dimensions, StyleSheet, View, Text } from "react-native";
+import { PanResponder, Dimensions, StyleSheet, View } from "react-native";
 import PropTypes from "prop-types";
 import * as Utils from "./Utils";
 import Point from "./Point";
@@ -18,11 +18,13 @@ const borderWidth = 1;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    overflow: "hidden"
+    overflow: "hidden",
+    justifyContent:"center",
+     alignItems:"center"
   }
 });
 
-const { width: deviceWidth, height: deviceHeight } = Dimensions.get("window");
+const { width: deviceWidth } = Dimensions.get("window");
 
 export default class GesturePassword extends Component {
   static defaultProps = {
@@ -36,14 +38,14 @@ export default class GesturePassword extends Component {
     warningDuration: 0,
     isWarning: false,
     showArrow: true,
-    allowCross: true
+    allowCross: true,
+    marginStart: 0,
+    marginTop: 0
   };
 
-  // 构造
+  
   constructor(props) {
     super(props);
-
-    // 初始状态
     this.state = {
       isWarning: false,
       points: [],
@@ -51,8 +53,7 @@ export default class GesturePassword extends Component {
       arrows: []
     };
 
-    this._gestureAreaMarginHorizontal =
-      (deviceWidth - props.gestureAreaLength) / 2;
+    this._gestureAreaMarginHorizontal = (deviceWidth - props.gestureAreaLength) / 2;
     this._gestureAreaLeft = 0;
     this._gestureAreaTop = 0;
     this._pointRadius = (props.gestureAreaLength - padding * 2) / 8;
@@ -60,9 +61,6 @@ export default class GesturePassword extends Component {
     this._currentLine = null;
     this._timer = null;
     this._sequence = [];
-  }
-
-  componentWillMount() {
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
@@ -73,10 +71,12 @@ export default class GesturePassword extends Component {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      isWarning: nextProps.isWarning
-    });
+  componentDidUpdate(nextProps) {
+    if (nextProps.isWarning != this.props.isWarning) {
+      this.setState({
+        isWarning: nextProps.isWarning
+      });
+    }
   }
 
   render() {
@@ -110,8 +110,8 @@ export default class GesturePassword extends Component {
   }
 
   _onLayout = e => {
-    this._gestureAreaLeft = e.nativeEvent.layout.x;
-    this._gestureAreaTop = e.nativeEvent.layout.y;
+    this._gestureAreaLeft = e.nativeEvent.layout.x + this.props.marginStart;
+    this._gestureAreaTop = e.nativeEvent.layout.y + this.props.marginTop;
     this._initializePoints();
   };
 
@@ -220,7 +220,6 @@ export default class GesturePassword extends Component {
   }
 
   _addSequence(index) {
-    //if (~this._sequence.findIndex((item) => item === index)) {
     if (this._sequence.includes(index)) {
       return;
     }
@@ -230,17 +229,13 @@ export default class GesturePassword extends Component {
   _addArrow(arrow) {
     this.state.arrows.push(arrow);
     let arrows = this.state.arrows;
-    this.setState({
-      arrows
-    });
+    this.setState({ arrows });
   }
 
   _addLine(line) {
     this.state.lines.push(line);
     let lines = this.state.lines;
-    this.setState({
-      lines
-    });
+    this.setState({ lines });
   }
 
   _updateLine(start, end) {
@@ -248,16 +243,12 @@ export default class GesturePassword extends Component {
     this._currentLine.end = end;
 
     let lines = this.state.lines;
-    this.setState({
-      lines
-    });
+    this.setState({ lines });
   }
 
   _setToActive(point) {
     point.isActive = true;
-    this.setState({
-      points: this.state.points
-    });
+    this.setState({ points: this.state.points });
   }
 
   _reset() {
@@ -418,6 +409,8 @@ GesturePassword.propTypes = {
   lineColor: PropTypes.string,
   activeColor: PropTypes.string,
   warningColor: PropTypes.string,
+  marginStart: PropTypes.number,
+  marginTop: PropTypes.number,
   warningDuration: PropTypes.number,
   topComponent: PropTypes.element,
   bottomComponent: PropTypes.element,

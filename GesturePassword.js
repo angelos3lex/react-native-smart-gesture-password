@@ -71,10 +71,10 @@ export default class GesturePassword extends Component {
     });
   }
 
-  componentDidUpdate(nextProps) {
-    if (nextProps.isWarning != this.props.isWarning) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.isWarning != this.props.isWarning) {
       this.setState({
-        isWarning: nextProps.isWarning
+        isWarning: this.props.isWarning
       });
     }
   }
